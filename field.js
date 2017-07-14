@@ -26,7 +26,6 @@ var fgrid_max_col;
 var fgrid_max_row;
 var margin;
 var size;
-var scale;
 var spread;
 var dot_size;
 var fdotClassArray;
@@ -57,9 +56,9 @@ function initGrid(settings) {
 
     fgridHeight = 300;
     fgridWidth = 300;
-    margin = 8;
-    size = 5;
-    spread = 6;
+    margin = 5;
+    size = 4;
+    spread = 10;
     FieldEqn = sensitivityVal;
     fgridClassArray = new Array(0);
     fdotClassArray = new Array(0);
@@ -73,19 +72,18 @@ function initGrid(settings) {
         console.log("fgrid ID not provided.")
         return;
     } else{
-        if (settings.hasOwnProperty('field_height')) fgridHeight = settings.field_height;
-        if (settings.hasOwnProperty('field_width')) fgridWidth = settings.field_width;
-        if (settings.hasOwnProperty('dot_margin')) margin = settings.dot_margin;
-        if (settings.hasOwnProperty('dot_size')) size = settings.dot_size;
-        if (settings.hasOwnProperty('force_spread')) spread = settings.force_spread;
+        if (settings.hasOwnProperty('fieldHeight')) fgridHeight = settings.fieldHeight;
+        if (settings.hasOwnProperty('fieldWidth')) fgridWidth = settings.fieldWidth;
+        if (settings.hasOwnProperty('dotMargin')) margin = settings.dotMargin;
+        if (settings.hasOwnProperty('dotSize')) size = settings.dotSize;
+        if (settings.hasOwnProperty('forceSpread')) spread = settings.forceSpread;
         if (settings.hasOwnProperty('fieldEqn')) FieldEqn = settings.fieldEqn;
         if (settings.hasOwnProperty('fgridClassArray')) fgridClassArray = settings.fgridClassArray;
         if (settings.hasOwnProperty('fdotClassArray')) fdotClassArray = settings.fdotClassArray;
-        if (settings.hasOwnProperty('rgba_state_true')) rgba_state_true = settings.rgba_state_true;
-        if (settings.hasOwnProperty('rgba_state_true')) rgba_state_false = settings.rgba_state_false;
+        if (settings.hasOwnProperty('rgbaStateTrue')) rgba_state_true = settings.rgbaStateTrue;
+        if (settings.hasOwnProperty('rgbaStateTrue')) rgba_state_false = settings.rgbaStateFalse;
     }
 
-    scale = size / 12;
     dot_size = 2 * margin + size;
     state_false_col_val = 'rgba(' + rgba_state_false[0] + ',' + rgba_state_false[1] + ',' + rgba_state_false[2] + ',' + rgba_state_false[3] + ')';
     rgba_state_dif = [
