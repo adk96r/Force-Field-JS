@@ -269,5 +269,5 @@ function changeField(event){
  * for a different behaviour.
  */
 function sensitivityVal(delta_x, delta_y){
-    return margin + 10*Math.max(0, 7 + Math.log(1/Math.pow(Math.hypot(delta_x, delta_y),1.5)));
+    return margin + 10*Math.max(0, 7 + Math.log(1/Math.pow(Math.hypot(delta_x, delta_y),1.6)));
 }
